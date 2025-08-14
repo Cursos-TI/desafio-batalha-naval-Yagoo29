@@ -1,65 +1,59 @@
-🛳️ Batalha Naval – Posicionando Navios
+⚓ Batalha Naval – Versão Avançada com Habilidades Especiais
 📌 Descrição
 
-Este projeto é a primeira etapa da construção de um jogo de Batalha Naval em C.
-O objetivo deste nível é criar um tabuleiro 10x10 e posicionar dois navios de tamanho fixo (3 posições cada), um na horizontal e outro na vertical, sem sobreposição e dentro dos limites.
+Este projeto é a etapa final da evolução do jogo Batalha Naval em C.
+Agora, além do posicionamento de navios horizontais, verticais e diagonais, adicionamos habilidades especiais com áreas de efeito distintas (Cone, Cruz e Octaedro), que podem ser aplicadas em qualquer posição do tabuleiro.
 
 🎯 Objetivos
 
-Representar o tabuleiro com uma matriz bidimensional (10x10).
+Criar um tabuleiro 10x10 com navios já posicionados.
 
-Inicializar todas as posições com o valor 0 (água).
+Criar três matrizes de habilidades (Cone, Cruz e Octaedro).
 
-Posicionar:
+Sobrepor essas habilidades ao tabuleiro, sem apagar navios.
 
-Navio horizontal (valor 3) em coordenadas fixas.
+Representar:
 
-Navio vertical (valor 3) em coordenadas fixas.
+Água → 0
 
-Validar:
+Navio → 3
 
-Que o navio cabe no tabuleiro.
-
-Que não há sobreposição de navios.
-
-Exibir o tabuleiro no console.
+Área de habilidade → 5
 
 🛠️ Tecnologias utilizadas
 
-Linguagem: C
+C (ANSI C)
 
-Estruturas utilizadas:
+Matrizes bidimensionais
 
-Matrizes (int tabuleiro[10][10])
+Estruturas de repetição aninhadas
 
-Loops for aninhados
+Condicionais para validação de limites e formas
 
-Constantes com #define
-
-Validações condicionais com if
+Distância de Manhattan para formar o Octaedro
 
 📂 Estrutura do Código
 
-Definição de constantes
+Inicialização
 
-TAM_TABULEIRO → tamanho do tabuleiro (10)
+Função inicializarTabuleiro() preenche tudo com 0 (água).
 
-TAM_NAVIO → tamanho fixo dos navios (3)
+Posicionamento de navios
 
-AGUA e NAVIO → valores que representam água (0) e navio (3)
+Função posicionarNavio() insere navios horizontais, verticais ou diagonais.
 
-Inicialização do tabuleiro
+Construção das habilidades
 
-Preenche toda a matriz com 0 (água).
+criarCone() → Forma de cone apontando para baixo.
 
-Posicionamento dos navios
+criarCruz() → Forma de cruz com centro no meio.
 
-Coordenadas iniciais fixas definidas no código.
+criarOctaedro() → Forma de losango (vista frontal de um octaedro).
 
-Validação de limites e sobreposição.
+Aplicação no tabuleiro
 
-Marcação das posições com 3.
+aplicarHabilidade() sobrepõe a matriz da habilidade no ponto central especificado.
 
-Exibição no console
+Exibição final
 
-Impressão formatada da matriz.
+Função exibirTabuleiro() mostra o resultado com números (0, 3, 5).
